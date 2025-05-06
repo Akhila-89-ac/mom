@@ -5,11 +5,9 @@ from flask import Flask, request
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 from google.cloud import pubsub_v1
-#from meet import meet_bp
 from pubsub_handler import pubsub_bp
 
 app = Flask(__name__)
-#app.register_blueprint(meet_bp)
 app.register_blueprint(pubsub_bp)
 
 SCOPES = [
@@ -17,7 +15,7 @@ SCOPES = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-WEBHOOK_URL = "https://bfb5-34-143-150-148.ngrok-free.app/webhook"  # 🔁 Replace when ngrok restarts
+WEBHOOK_URL = "https://83a7-35-198-206-130.ngrok-free.app/webhook"  # 🔁 Replace when ngrok restarts
 PROJECT_ID = "round-folio-457014-a9"
 TOPIC_NAME = "calendar-event-topic"
 
@@ -33,32 +31,32 @@ def get_calendar_service():
         creds = Credentials.from_authorized_user_file("token.json", SCOPES)
         return build("calendar", "v3", credentials=creds)
     except Exception as e:
-        print(f"❌ Failed to load calendar creds: {e}")
+        print(f"Failed to load calendar creds: {e}")
         return None
 
-# 🔐 Load creds for Drive
+# Load creds for Drive
 def get_drive_service():
     try:
         creds = Credentials.from_authorized_user_file("token.json", SCOPES)
         return build("drive", "v3", credentials=creds)
     except Exception as e:
-        print(f"❌ Failed to load drive creds: {e}")
+        print(f" Failed to load drive creds: {e}")
         return None
 
-# ✅ Home route
+# Home route
 @app.route("/")
 def home():
     return "✅ Flask Server Running!"
 
-# 📬 Webhook endpoint
+# Webhook endpoint
 @app.route("/webhook", methods=["POST"])
 def calendar_webhook():
     global calendar_sync_token
-    print("\n📩 Webhook POST received!")
-    print("📩 Headers:", dict(request.headers))
+    print("\nWebhook POST received!")
+    print(" Headers:", dict(request.headers))
 
     resource_state = request.headers.get("X-Goog-Resource-State")
-    print(f"📣 Resource State: {resource_state}")
+    print(f" Resource State: {resource_state}")
 
     if resource_state == "sync":
         print("🔁 Initial sync received. Skipping.")
@@ -105,7 +103,7 @@ def calendar_webhook():
 
     return "", 200
 
-# 📤 Pub/Sub Publisher
+#  Pub/Sub Publisher
 def publish_to_pubsub(event_id):
     try:
         publisher = pubsub_v1.PublisherClient()
@@ -121,7 +119,7 @@ def publish_to_pubsub(event_id):
         print(f"❌ Pub/Sub publish failed: {e}")
 
 
-# ❌ Prevent duplicate events
+#  Prevent duplicate events
 def is_duplicate(event_id):
     if event_id in recent_event_ids:
         return True
@@ -130,7 +128,7 @@ def is_duplicate(event_id):
         recent_event_ids.pop()
     return False
 
-# 🚀 One-time Calendar subscription
+#  One-time Calendar subscription
 def subscribe_to_calendar():
     service = get_calendar_service()
     if not service:
@@ -152,7 +150,7 @@ def subscribe_to_calendar():
     except Exception as e:
         print(f"❌ Subscription error: {e}")
 
-# 🔁 Ensure single subscription setup
+#  Ensure single subscription setup
 subscribed = False
 
 @app.before_request
@@ -163,6 +161,6 @@ def setup_once():
         subscribe_to_calendar()
         subscribed = True
 
-# 🏁 Run app
+#  Run app
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)

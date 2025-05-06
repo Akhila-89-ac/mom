@@ -2,7 +2,9 @@ from calendar_service import get_upcoming_event
 from drive_service import check_or_create_folder
 from file_fetch import fetch_file_from_api, upload_file_to_drive
 from openai_service import get_file_content, summarize_content, upload_summary_as_doc
-from email_service import send_email_with_attachment
+from email_service import trigger_email_sending  # new Gmail API-based function
+
+# from email_service import send_email_with_attachment
 
 def process_meeting_files():
     try:
@@ -71,9 +73,14 @@ def process_meeting_files():
 
             # Send the summary as an email attachment to participants
             subject = f"Meeting Summary: {event_title}"
-            body = f"Hi team,\n\nPlease find the attached summary for the meeting on {event_date} at {event_time}.\n\nBest,\nAkhila's Assistant "
+            body = f"Hi team,\n\nPlease find the attached summary for the meeting on {event_date} at {event_time}.\n\nBest,\nAkhila's Assistant"
 
-            send_email_with_attachment(subject, body, attendee_emails, doc_file_id, "Meeting_Summary.docx")
+            #subject = f"Meeting Summary: {event_title}"
+            #body = f"Hi team,\n\nPlease find the attached summary for the meeting on {event_date} at {event_time}.\n\nBest,\nAkhila's Assistant "
+
+            #send_email_with_attachment(subject, body, attendee_emails, doc_file_id, "Meeting_Summary.docx")
+            trigger_email_sending(subject=subject, body_text=body, recipients=attendee_emails, doc_file_id=doc_file_id, filename="Meeting_Summary.pdf")  # Since you're exporting as PDF from Drive
+
             return {"status": "success", "message": "Meeting summary sent to participants."}
 
         else:

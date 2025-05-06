@@ -12,10 +12,6 @@ load_dotenv("/home/akhila8452/mom_auth/.env")
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 
-
-
-
-
 app = Flask(__name__)
 
 # Get environment variables
@@ -65,4 +61,4 @@ def oauth2callback():
         return f'❌ Error occurred:<br><pre>{traceback.format_exc()}</pre>', 500
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=8081)
+    app.run('0.0.0.0', port=8083)

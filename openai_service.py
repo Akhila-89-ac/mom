@@ -7,11 +7,11 @@ from googleapiclient.http import MediaFileUpload
 from google.oauth2.credentials import Credentials
 from dotenv import load_dotenv
 load_dotenv("/home/akhila8452/mom_auth/.env")
-openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 
 SCOPES = ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/calendar"]
-
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def get_drive_service():
     creds = Credentials.from_authorized_user_file("token.json", SCOPES)
