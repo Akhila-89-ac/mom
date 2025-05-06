@@ -1,0 +1,56 @@
+SPEAKER_03: So errors are reduced and chances of reaching accuracy is high. , start_time = 48.954 , end time = 52.819
+SPEAKER_02:  Yes, I agree with you, but isn't this AI making the humans so lazy with its applications? , start_time = 54.368 , end time = 59.816
+SPEAKER_02: Like most of its applications are automated, majority of its work is being automated. , start_time = 59.916 , end time = 64.884
+SPEAKER_02: So like if humans get addicted to this type of inventions, this might cause a lot of problems to the future generations, like they might become so lazy. , start_time = 64.904 , end time = 73.677
+SPEAKER_04:  When it's not making people lazy, instead people will be still working on their creativity part. , start_time = 76.171 , end time = 80.677
+SPEAKER_04: Like for the decisions where they have to think and make something, people will be working on that. , start_time = 80.757 , end time = 84.742
+SPEAKER_04: Whereas for the jobs which are repetitive like sending mails and making documents and in the documents where the error should be reduced. , start_time = 84.762 , end time = 90.91
+SPEAKER_04: For those particular things, the robots or the AI machines will be working. , start_time = 90.93 , end time = 93.953
+SPEAKER_04: This will reduce people from working on their boring parts and instead use their mind and energy on the creative parts. , start_time = 94.614 , end time = 100.862
+SPEAKER_01:  I think for the repetitive jobs and the boring jobs you are talking about, I don't think there is any reason to have robots which are made of higher cost and also it requires maintenance of these robots. , start_time = 103.07 , end time = 116.113
+SPEAKER_01: So for these repetitive jobs, I don't think you need to put this much price and you need to get a robot to do these silly jobs. , start_time = 116.453 , end time = 124.107
+SPEAKER_03: Yes, I agree, but it's a one-time investment. , start_time = 125.229 , end time = 127.693
+SPEAKER_03:  So this is considered because artificial intelligence is available for humans, customers or anyone like for more than 24 hours, like for 24x7. , start_time = 128.011 , end time = 140.792
+SPEAKER_02: Yes, only it is available 24x7. , start_time = 142.756 , end time = 144.579
+SPEAKER_02: But isn't this availability making a cause of unemployment? , start_time = 145.36 , end time = 149.407
+SPEAKER_02: Like if this AI is replacing the majority of these repeated tasks, , start_time = 149.427 , end time = 153.073
+SPEAKER_02:  So this might cause a lot of unemployment. , start_time = 153.408 , end time = 155.554
+SPEAKER_02: Like every organization is looking to replace the minimum qualified individuals with the Aero botnets. , start_time = 155.855 , end time = 160.308
+SPEAKER_02: This will cause a lot of unemployment in the future. , start_time = 160.568 , end time = 162.574
+SPEAKER_04:  This is not going to cause unemployment because the first point is the people are only ones who are making the robots. , start_time = 164.545 , end time = 168.91
+SPEAKER_04: So if the unemployment will be causing this sector, it will be created in some other sectors. , start_time = 169.27 , end time = 172.914
+SPEAKER_04: The employment will be created in some other sector. , start_time = 172.934 , end time = 174.576
+SPEAKER_04: Along with that, for the jobs where the risk is involved, where the human life is at risk, we can make machine to do those tasks like in any fire extinguishing work or in any natural disaster or human disaster. , start_time = 174.996 , end time = 186.889
+SPEAKER_04: In those cases instead, if a human will do the work, there is a risk of their lives. , start_time = 187.27 , end time = 192.395
+SPEAKER_04: Whereas if a machine works, , start_time = 192.836 , end time = 194.097
+SPEAKER_04:  There are chances of more accuracy, more efficiency and the risk is less. , start_time = 194.532 , end time = 199.665
+SPEAKER_01:  But what I think is these robots are pre-programmed. , start_time = 202.058 , end time = 205.463
+SPEAKER_01: So during these natural disasters that you are talking about, if the robot doesn't really know the solution, like if they cannot really act on spot, like if the new problem arises during these natural disasters, then I don't think there is any robot that can solve, that can think on its own and solve a problem accordingly. , start_time = 205.503 , end time = 229.315
+SPEAKER_03:  See, it also helps us with digital assistance. , start_time = 230.408 , end time = 235.697
+SPEAKER_03: Educational institutions, helpline centers, hospitals, et cetera, uses digital assistance. , start_time = 236.117 , end time = 241.426
+SPEAKER_03: So organizations have a customer support team. , start_time = 241.807 , end time = 245.613
+SPEAKER_03: So they work all the time. , start_time = 246.014 , end time = 247.396
+SPEAKER_03: And at any time, humans take their help and it's useful. , start_time = 247.496 , end time = 251.623
+SPEAKER_02:  Yes, it is available in digital assistance. , start_time = 253.038 , end time = 255.442
+SPEAKER_02: But this unit has one thing is that machines can't order their responses to changing environments. , start_time = 255.462 , end time = 260.91
+SPEAKER_02: So that is the basic premise on which these AIs are built. , start_time = 261.431 , end time = 264.416
+SPEAKER_02: So this repetitive nature of work where the input doesn't change. , start_time = 264.836 , end time = 267.941
+SPEAKER_02: So machines can't get what is right, what is wrong, or they're not capable of what is legal or illegal, that kind of things. , start_time = 268.562 , end time = 275.012
+SPEAKER_04:  For the new task, we still have humans to work for those kind of things. , start_time = 276.528 , end time = 280.115
+SPEAKER_04: But for the tasks which are predefined, we can tell the machine that this is right and this is wrong. , start_time = 280.135 , end time = 284.102
+SPEAKER_04: For those particular tasks, the decision-making by the robots will be faster and will be more efficient. , start_time = 284.462 , end time = 288.931
+SPEAKER_04: The error will be less in those decisions and they'll be faster. , start_time = 289.472 , end time = 291.776
+SPEAKER_04: So this will reduce human effort. , start_time = 291.816 , end time = 293.218
+SPEAKER_04: Along with that, it will increase the efficiency of the particular task. , start_time = 293.559 , end time = 296.865
+SPEAKER_01:  But I think even in the past, like the old tasks which you were talking about, there needs to be improvements, right? , start_time = 298.685 , end time = 306.796
+SPEAKER_01: Like the world is changing and it has to be updating like every day. , start_time = 307.117 , end time = 311.423
+SPEAKER_01: So I don't think the robots will be able to update themselves. , start_time = 311.763 , end time = 314.347
+SPEAKER_01: And again, the human involvement has to be there to update the robots. , start_time = 314.487 , end time = 317.912
+SPEAKER_01: So I think it's time-taking and also it's very much cost-effective. , start_time = 318.272 , end time = 324.421
+SPEAKER_01: It's not cost-effective. , start_time = 324.441 , end time = 326.143
+SPEAKER_00:  Thank you guys, those were some nice points. , start_time = 330.562 , end time = 332.246
+SPEAKER_00: As we have seen, these are some advantages and disadvantages of artificial intelligence. , start_time = 332.968 , end time = 338.04
+SPEAKER_00: As we know, every new invention or breakthrough will have both advantages and disadvantages. , start_time = 338.741 , end time = 343.012
+SPEAKER_00: It is upon us how we use it. , start_time = 343.513 , end time = 345.357
+SPEAKER_00: So when we use the artificial intelligence to its limit, we all could really enjoy the outcomes of it. , start_time = 346.219 , end time = 352.614
+SPEAKER_00: Thank you. , start_time = 353.196 , end time = 353.717
