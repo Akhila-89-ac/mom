@@ -21,7 +21,7 @@ Tech Stack
   
 Project Structure
 
-```text
+
 minutes-of-meeting-ai/
 │
 ├── app.py                   # Main script to orchestrate all steps
@@ -54,7 +54,7 @@ minutes-of-meeting-ai/
 Setup Instructions
 1. Clone the Repository
 
-git clone https://github.com/your-username/minutes-of-meeting-ai.git
+git clone https://github.com/Akhila-89-ac/minutes-of-meeting-ai.git
 cd minutes-of-meeting-ai
 2. Install Dependencies
 
