@@ -21,7 +21,7 @@ Tech Stack
   
 Project Structure
 
-
+```text
 minutes-of-meeting-ai/
 │
 ├── app.py                   # Main script to orchestrate all steps
