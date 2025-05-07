@@ -53,9 +53,7 @@ minutes-of-meeting-ai/
 
 Setup Instructions
 1. Clone the Repository
-bash
-Copy
-Edit
+
 git clone https://github.com/your-username/minutes-of-meeting-ai.git
 cd minutes-of-meeting-ai
 2. Install Dependencies
