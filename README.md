@@ -11,30 +11,40 @@ Features
 - Uses Google Cloud Pub/Sub for scalable automation
 
 Tech Stack
--Python 3.10,Flask,Google APIs (Drive, Calendar, Docs, Gmail),Google Cloud Pub/Sub((Webhook trigger mechanism),OpenAI API (GPT-4o),Whisper + WhisperX,Pub/Sub + Webhooks,
-OAuth 2.0,dotenv for secret management
+- Python 3.10+
+- Flask
+- OpenAI API (GPT)
+- Whisper
+- pyannote-audio (for speaker diarization)
+- Google APIs (Calendar, Drive, Docs, Gmail)
+- Google Cloud Pub/Sub
   
 Project Structure :
-  minutes-of-meeting-ai/
-│
-├── app.py                      # Main script to orchestrate all steps
-├── config.py                   # Stores constants and credential paths
+minutes-of-meeting-ai/
+├── app.py                      # Main orchestration script
+├── config.py                   # Configuration constants and paths
 ├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
+│
 ├── models/
-│   ├── whisper_transcriber.py  # Uses Whisper for audio transcription
-│   └── speaker_diarizer.py     # Uses pyannote-audio for speaker labels
+│   ├── whisper_transcriber.py  # Audio transcription (Whisper)
+│   └── speaker_diarizer.py     # Speaker identification (pyannote)
+│
 ├── utils/
-│   ├── summarizer.py           # Summarizes transcripts using LLMs
-│   └── text_cleaner.py         # Cleans and formats raw text
+│   ├── summarizer.py           # LLM-based summarization
+│   └── text_cleaner.py         # Pre-processing transcript text
+│
 ├── integrations/
-│   ├── google_calendar.py      # Google Calendar API integration
-│   └── google_drive.py         # Google Drive upload and sharing
+│   ├── google_calendar.py      # Google Calendar API
+│   └── google_drive.py         # Google Drive API
+│
 ├── data/
-│   └── sample_audio.wav        # Sample audio for testing
-├── output/
-│   ├── transcript.json         # Full transcript with timestamps
-│   └── minutes_of_meeting.md   # Final meeting summary
-└── README.md
+│   └── sample_audio.wav        # Demo audio file
+│
+└── output/
+    ├── transcript.json
+    └── minutes_of_meeting.md
+
 
 
 Setup Instructions
@@ -79,14 +89,17 @@ Share summary.doc with meeting attendees
 
 
 
-Sample Input/Output:
-Input
- .wav or .mp3 meeting recording in data/
- Output
-output/transcript.txt → raw transcript from Whisper
-output/summary.txt → summary from GPT
-Google Doc uploaded and shared with participants
-Sample Output Screenshot:
+Sample Input/Output
+🔊 Input
+.wav or .mp3 meeting recording file in data/
+
+📄 Output
+output/transcript.txt → Whisper transcript
+output/summary.txt → GPT-generated summary
+Google Doc → Shared automatically with participants
+
+✅ You can include screenshots here using:
+![Summary Screenshot](screenshots/summary_doc.png)
 
 
 
