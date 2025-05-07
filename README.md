@@ -57,9 +57,7 @@ Setup Instructions
 git clone https://github.com/your-username/minutes-of-meeting-ai.git
 cd minutes-of-meeting-ai
 2. Install Dependencies
-bash
-Copy
-Edit
+
 pip install -r requirements.txt
 
 3. Set Up Google APIs
@@ -86,9 +84,7 @@ On first run, you'll be prompted to authenticate, and token.json will be generat
 4. Add Environment Variables
 Create a .env file in the root:
 
-env
-Copy
-Edit
+
 OPENAI_API_KEY=your_openai_key
 GOOGLE_CLIENT_ID=your_client_id
 GOOGLE_CLIENT_SECRET=your_client_secret
@@ -109,9 +105,7 @@ Read Google Calendar events
 In pubsub_handler.py, configure the topic and subscription
 How to Use
 ✅ CLI Mode (default)
-bash
-Copy
-Edit
+
 python app.py
 This will:
 
@@ -140,8 +134,6 @@ output/transcript.txt → Whisper transcript
 output/summary.txt → GPT-generated summary
 
 Google Doc → Shared automatically with participants
-
-✅ You can include screenshots here using:
 
 
 
