@@ -1,7 +1,16 @@
-**Minutes of Meeting AI Automation** (MoM-AI)
+# Minutes of Meeting AI Automation (MoM-AI)
 - An AI-powered automated system that helps you manage your meeting lifecycle from start to finish. It captures your meetings, transcribes them using Whisper, diarizes speakers, summarizes using OpenAI, uploads to Google Drive, and emails participants.
+- 
+## Table of contents
 
-Features
+- [Features](#features)
+- [Tech Stack](#techstack)
+- [Project Structure](#projectStructure)
+- [Setup Instructions](#setupinstructions)
+- [How to Use](#howtouse)
+- [Sample Input/Output](#sampleinput/output)
+- 
+## Features
 - Auto-creates Google Drive folder when a Google Calendar events with attendees and Meet link is created
 - Transcribe meeting audio using OpenAI Whisperr + WhisperX
 - Identify speakers using pyannote-audio diarization
@@ -10,7 +19,7 @@ Features
 - share google doc with all attendees via email
 - Uses Google Cloud Pub/Sub for scalable automation
 
-Tech Stack
+## Tech Stack
 - Python 3.10+
 - Flask
 - OpenAI API (GPT)
@@ -19,7 +28,7 @@ Tech Stack
 - Google APIs (Calendar, Drive, Docs, Gmail)
 - Google Cloud Pub/Sub
   
-Project Structure
+## Project Structure
 
 ```text
 minutes-of-meeting-ai/
@@ -49,7 +58,6 @@ minutes-of-meeting-ai/
 │   └── minutes_of_meeting.md      # Final meeting summary
 │
 └── README.md
-
 
 Setup Instructions
 1. Clone the Repository
