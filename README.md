@@ -58,8 +58,9 @@ Before setting up the project, ensure that Python 3.9 or higher is installed on 
    ```python --version```
 
 #### For Google Cloud Shell
+
 Google Cloud Shell already comes with Python pre-installed, so you can skip this step when using Cloud Shell.
-   
+   ```python3 --version```
    
 ### 2. Clone the Repository
 
@@ -73,83 +74,78 @@ cd minutes-of-meeting-ai
 ### 3.Install Dependencies
 
 ```pip install -r requirements.txt```
+If WhisperX or pyannote-audio require additional installation (e.g., torch, ffmpeg), you may also need:
 
 ### 4.Set Up Google APIs & Google Cloud Pub/Sub
 - Go to Google Cloud Console
   - Create a new project
 - Enable these APIs:
-
   - Google Calendar API
-
   - Google Drive API
-
   - Google Docs API
-
   - Gmail API
+- Create a Pub/Sub topic and a subscription
+- Set your Flask app's /webhook endpoint as the push endpoint
+- Grant the Pub/Sub service account permission to: Push to your Flask endpoint & Read Google Calendar events
 
 - Create OAuth 2.0 Client ID (Web/Desktop)
-
 - Download credentials.json and place it in the project root
-
-
-
 - On first run, you'll be prompted to authenticate, and token.json will be generated
 
-### 5.Add Environment Variables
+### 5.OpenAI API Setup
+- Sign up at https://platform.openai.com
+- Generate an API key
+- Set it in your .env file:
 
-Create a .env file in the root:
+### 6.Add Environment Variables
 
+Create a .env file in the project root:
 
+```
 - OPENAI_API_KEY=your_openai_key
 - GOOGLE_CLIENT_ID=your_client_id
 - GOOGLE_CLIENT_SECRET=your_client_secret
 - REDIRECT_URI=http://localhost:8080/
 - EMAIL_SENDER=your_email@gmail.com
 
-### 6.Set Up Google Cloud Pub/Sub
-Create a Pub/Sub topic and a subscription
+```
+You can use the python-dotenv package to load these variables into your environment:
 
-Set your Flask app's /webhook endpoint as the push endpoint
+```pip install python-dotenv```
 
-Grant the Pub/Sub service account permission to:
+### 7.Run the Application
 
-Push to your Flask endpoint
+```python app.py```
 
-Read Google Calendar events
+#### Workflow Pipeline
 
-In pubsub_handler.py, configure the topic and subscription
+- Detects new calendar event and creates a corresponding Drive folder
+- After meeting, the audio file is uploaded to the Drive folder
+- Script fetches the audio, transcribes with WhisperX
+- Speaker diarization is done using pyannote-audio
+- Full transcript is summarized using OpenAI API
+- Summary is saved in the same folder and emailed to participants
 
-## How to Use
-✅ CLI Mode (default)
+### 8.Testing and Debugging
 
-python app.py
-This will:
+- Test API Endpoints with Postman
+- Expose Local Flask Server with Ngrok
 
-Fetch the upcoming Google Calendar event
+### 9.Troubleshooting
 
-Create a folder in Google Drive (if not exists)
-
-Wait for transcript.txt inside the folder
-
-Summarize the transcript using GPT
-
-Save the summary as summary.docx
-
-Share the document with all meeting participants
-
-
-
+- Missing credentials.json: Ensure the credentials file is placed in the root directory of the project.
+- Authentication Issues: If token.json is missing, try deleting it and re-authenticating by running the app again.
+- Package Issues: Check requirements.txt for any missing packages and install them manually using pip install <package-name>.
 
 ## Sample Input/Output
-🔊 Input
-.wav or .mp3 meeting recording file in data/
 
-📄 Output
-output/transcript.txt → Whisper transcript
+- Input
+  - .wav or .mp3 meeting recording file in data/
 
-output/summary.txt → GPT-generated summary
-
-Google Doc → Shared automatically with participants
+- Output
+  - output/transcript.txt → Whisper transcript
+  - output/summary.txt → GPT-generated summary
+  - Google Doc → Shared automatically with participants
 
 
 
