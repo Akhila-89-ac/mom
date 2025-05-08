@@ -5,7 +5,7 @@
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Development Software & Tools](#development-software-&-tools)
+- [Development Software & Tools](#development-software---tools)
 - [Application Set Up Instructions](#application-set-up-instructions)
 - [Project Structure](#project-structure)
 - [How to Use](#how-to-use)
