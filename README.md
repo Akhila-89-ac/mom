@@ -74,11 +74,9 @@ cd minutes-of-meeting-ai
 
 ```pip install -r requirements.txt```
 
-### 4.Set Up Google APIs
+### 4.Set Up Google APIs & Google Cloud Pub/Sub
 - Go to Google Cloud Console
-
   - Create a new project
-
 - Enable these APIs:
 
   - Google Calendar API
@@ -92,6 +90,8 @@ cd minutes-of-meeting-ai
 - Create OAuth 2.0 Client ID (Web/Desktop)
 
 - Download credentials.json and place it in the project root
+
+
 
 - On first run, you'll be prompted to authenticate, and token.json will be generated
 
