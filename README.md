@@ -12,6 +12,7 @@
 - [Sample Input/Output](#sample-input/output)
 - 
 ## Features
+
 - Auto-creates Google Drive folder when a Google Calendar events with attendees and Meet link is created
 - Transcribe meeting audio using OpenAI Whisperr + WhisperX
 - Identify speakers using pyannote-audio diarization
@@ -21,6 +22,7 @@
 - Uses Google Cloud Pub/Sub for scalable automation
 
 ## Tech Stack
+
 - Python 3.10+
 - Flask
 - OpenAI API (GPT)
@@ -30,6 +32,7 @@
 - Google Cloud Pub/Sub
 
 ## Development Software & Tools
+
 - Python 3.9+
 - Flask
 - Visual Studio Code (VS Code)
@@ -43,47 +46,67 @@
   
 ## Application Set Up Instructions
 
-### Clone the Repository
-```bash
+### 1. Install Python
+
+Before setting up the project, ensure that Python 3.9 or higher is installed on your local machine or development environment.
+
+#### For Local Development (VSCode)
+
+1. Download and install the latest version of Python (Python 3.9 or higher) from the official [Python website](https://www.python.org/downloads/).
+2. After installation, verify it by running the following commands in your terminal/command prompt:
+
+   ```python --version```
+
+#### For Google Cloud Shell
+Google Cloud Shell already comes with Python pre-installed, so you can skip this step when using Cloud Shell.
+   
+   
+### 2. Clone the Repository
+
+To get started, clone the project repository to your local or cloud environment:
+
+```
 git clone https://github.com/Akhila-89-ac/minutes-of-meeting-ai.git
 cd minutes-of-meeting-ai
+```
 
-### Install Dependencies
+### 3.Install Dependencies
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
-### Set Up Google APIs
-Go to Google Cloud Console
+### 4.Set Up Google APIs
+- Go to Google Cloud Console
 
-Create a new project
+  - Create a new project
 
-Enable these APIs:
+- Enable these APIs:
 
-Google Calendar API
+  - Google Calendar API
 
-Google Drive API
+  - Google Drive API
 
-Google Docs API
+  - Google Docs API
 
-Gmail API
+  - Gmail API
 
-Create OAuth 2.0 Client ID (Web/Desktop)
+- Create OAuth 2.0 Client ID (Web/Desktop)
 
-Download credentials.json and place it in the project root
+- Download credentials.json and place it in the project root
 
-On first run, you'll be prompted to authenticate, and token.json will be generated
+- On first run, you'll be prompted to authenticate, and token.json will be generated
 
-4. Add Environment Variables
+### 5.Add Environment Variables
+
 Create a .env file in the root:
 
 
-OPENAI_API_KEY=your_openai_key
-GOOGLE_CLIENT_ID=your_client_id
-GOOGLE_CLIENT_SECRET=your_client_secret
-REDIRECT_URI=http://localhost:8080/
-EMAIL_SENDER=your_email@gmail.com
+- OPENAI_API_KEY=your_openai_key
+- GOOGLE_CLIENT_ID=your_client_id
+- GOOGLE_CLIENT_SECRET=your_client_secret
+- REDIRECT_URI=http://localhost:8080/
+- EMAIL_SENDER=your_email@gmail.com
 
-5. Set Up Google Cloud Pub/Sub
+### 6.Set Up Google Cloud Pub/Sub
 Create a Pub/Sub topic and a subscription
 
 Set your Flask app's /webhook endpoint as the push endpoint
