@@ -1,14 +1,15 @@
 # Minutes of Meeting AI Automation (MoM-AI)
 - An AI-powered automated system that helps you manage your meeting lifecycle from start to finish. It captures your meetings, transcribes them using Whisper, diarizes speakers, summarizes using OpenAI, uploads to Google Drive, and emails participants.
-- 
+  
 ## Table of contents
 
 - [Features](#features)
-- [Tech Stack](#techstack)
-- [Project Structure](#projectStructure)
-- [Setup Instructions](#setupinstructions)
-- [How to Use](#howtouse)
-- [Sample Input/Output](#sampleinput/output)
+- [Tech Stack](#tech-stack)
+- [Development Software & Tools](#development-software-&-tools)
+- [Application Set Up Instructions](#application-set-up-instructions)
+- [Project Structure](#project-structure)
+- [How to Use](#how-to-use)
+- [Sample Input/Output](#sample-input/output)
 - 
 ## Features
 - Auto-creates Google Drive folder when a Google Calendar events with attendees and Meet link is created
@@ -27,48 +28,31 @@
 - pyannote-audio (for speaker diarization)
 - Google APIs (Calendar, Drive, Docs, Gmail)
 - Google Cloud Pub/Sub
+
+## Development Software & Tools
+- Python 3.9+
+- Flask
+- Visual Studio Code (VS Code)
+- google cloud shell
+- Git & GitHub
+- OpenAI API
+- Google Cloud Console
+– Manage APIs, create OAuth credentials, monitor usage.
+- Postman
+- Ngrok
   
-## Project Structure
+## Application Set Up Instructions
 
-```text
-minutes-of-meeting-ai/
-│
-├── app.py                   # Main script to orchestrate all steps
-├── config.py                # Stores constants and credential paths
-├── requirements.txt         # Python dependencies
-├── .env                     # Environment variables (OPENAI, Google API keys)
-│
-├── models/
-│   ├── whisper_transcriber.py     # Uses Whisper for audio transcription
-│   └── speaker_diarizer.py        # Uses pyannote-audio for speaker labels
-│
-├── utils/
-│   ├── summarizer.py              # Summarizes transcripts using LLMs
-│   └── text_cleaner.py            # Cleans and formats raw text
-│
-├── integrations/
-│   ├── google_calendar.py         # Google Calendar API integration
-│   └── google_drive.py            # Google Drive upload and sharing
-│
-├── data/
-│   └── sample_audio.wav           # Sample audio for testing
-│
-├── output/
-│   ├── transcript.json            # Full transcript with timestamps
-│   └── minutes_of_meeting.md      # Final meeting summary
-│
-└── README.md
-
-Setup Instructions
-1. Clone the Repository
-
+### Clone the Repository
+```bash
 git clone https://github.com/Akhila-89-ac/minutes-of-meeting-ai.git
 cd minutes-of-meeting-ai
-2. Install Dependencies
+
+### Install Dependencies
 
 pip install -r requirements.txt
 
-3. Set Up Google APIs
+### Set Up Google APIs
 Go to Google Cloud Console
 
 Create a new project
@@ -111,7 +95,8 @@ Push to your Flask endpoint
 Read Google Calendar events
 
 In pubsub_handler.py, configure the topic and subscription
-How to Use
+
+## How to Use
 ✅ CLI Mode (default)
 
 python app.py
@@ -132,7 +117,7 @@ Share the document with all meeting participants
 
 
 
-📸 Sample Input/Output
+## Sample Input/Output
 🔊 Input
 .wav or .mp3 meeting recording file in data/
 
